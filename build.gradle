@@ -1,0 +1,100 @@
+import org.apache.tools.ant.taskdefs.condition.Os
+
+plugins {
+  id 'version-catalog'
+  id 'maven-publish'
+  id 'signing'
+  id 'net.researchgate.release' version '2.8.1'
+}
+
+def isSnapshot = version.endsWith("SNAPSHOT")
+def isWindows = Os.isFamily(Os.FAMILY_WINDOWS)
+
+catalog {
+  // declare the aliases, bundles and versions in this block
+  versionCatalog {
+    version('guava', '30.1.1-jre')
+    alias('guava').to('com.google.guava', 'guava').versionRef('guava')
+  }
+}
+
+release {
+  git {
+    requireBranch = "main"
+    pushToRemote = "origin"
+    signTag = true
+  }
+}
+
+//  configurations.all {
+//    resolutionStrategy.cacheDynamicVersionsFor 1, 'seconds'
+//    resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
+//  }
+
+repositories {
+
+  mavenLocal()
+
+  if (isWindows) {
+
+    maven {
+      url "https://maven.aliyun.com/repository/public"
+    }
+    maven {
+      url repoReleaseAliyun
+      credentials {
+        username aliyunPackagesUsername
+        password aliyunPackagesPassword
+      }
+    }
+    maven {
+      url repoSnapshotAliyun
+      credentials {
+        username aliyunPackagesUsername
+        password aliyunPackagesPassword
+      }
+    }
+  } else {
+
+    mavenCentral()
+    maven {
+      url repoSnapshotSonatype
+    }
+    maven {
+      url repoReleaseSonatype
+    }
+  }
+}
+
+publishing {
+
+  publications {
+    maven(MavenPublication) {
+      from components.versionCatalog
+    }
+  }
+
+  repositories {
+
+    def snapshotsRepoUrl = isWindows ? repoSnapshotAliyun : repoSnapshotSonatype
+    def releasesRepoUrl = isWindows ? repoReleaseAliyun : repoStageSonatype
+
+    def username = isWindows ? aliyunPackagesUsername : ossrhUsername
+    def password = isWindows ? aliyunPackagesPassword : ossrhPassword
+
+    maven {
+
+      url = isSnapshot ? snapshotsRepoUrl : releasesRepoUrl
+      credentials {
+        username username
+        password password
+      }
+    }
+  }
+}
+
+if (!isWindows && !isSnapshot) {
+  signing {
+    sign publishing.publications
+  }
+}
