@@ -18,12 +18,6 @@ catalog {
 
     version('spring-boot', '2.5.4')
 
-    version('mybatis-starter', '2.2.0')
-    alias('mybatis-starter').to('org.mybatis.spring.boot', 'mybatis-spring-boot-starter').versionRef('mybatis-starter')
-
-    version('pagehelper-starter', '1.3.1')
-    alias('pagehelper-starter').to('org.mybatis.spring.boot', 'mybatis-spring-boot-starter').versionRef('pagehelper-starter')
-
     version('commons-lang', '3.12.0')
     alias('commons-lang').to('org.apache.commons', 'commons-lang3').versionRef('commons-lang')
     version('commons-collections', '4.4')
@@ -55,6 +49,15 @@ catalog {
 
     version('cglib', '3.3.0')
     alias('cglib').to('cglib', 'cglib').versionRef('cglib')
+
+    version('mybatis-starter', '2.2.0')
+    alias('mybatis-starter').to('org.mybatis.spring.boot', 'mybatis-spring-boot-starter').versionRef('mybatis-starter')
+
+    version('pagehelper-starter', '1.3.1')
+    alias('pagehelper-starter').to('org.mybatis.spring.boot', 'mybatis-spring-boot-starter').versionRef('pagehelper-starter')
+
+    version('mariadb', '2.7.4')
+    alias('mariadb').to('org.mariadb.jdbc', 'mariadb-java-client').versionRef('mariadb')
 
     version('logback', '1.2.6')
     alias('logback-core').to('ch.qos.logback', 'logback-core').versionRef('logback')
