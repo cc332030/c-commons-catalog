@@ -11,10 +11,10 @@ catalog {
     version('charset', 'utf-8')
     version('jdk', '11')
 
-    version('c-commons-java', '0.0.1')
-    version('c-commons-web', '0.0.1')
-    version('c-commons-mybatis', '0.0.1')
-    version('c-commons-spring', '0.0.1-SNAPSHOT')
+    version('c-commons-java', '0.0.2-SNAPSHOT')
+    version('c-commons-web', '0.0.2-SNAPSHOT')
+    version('c-commons-mybatis', '0.0.2-SNAPSHOT')
+    version('c-commons-spring', '0.0.2-SNAPSHOT')
 
     version('spring-boot', '2.5.4')
 
@@ -57,6 +57,9 @@ catalog {
       'logback-core'
       , 'logback-classic'
     ])
+
+    version('janino', '3.1.6')
+    alias('janino').to('org.codehaus.janino', 'janino').versionRef('janino')
 
     version('lombok', '1.18.20')
     alias('lombok').to('org.projectlombok', 'lombok').versionRef('lombok')
