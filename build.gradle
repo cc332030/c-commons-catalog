@@ -79,15 +79,15 @@ publishing {
     def snapshotsRepoUrl = isWindows ? repoSnapshotAliyun : repoSnapshotSonatype
     def releasesRepoUrl = isWindows ? repoReleaseAliyun : repoStageSonatype
 
-    def username = isWindows ? aliyunPackagesUsername : ossrhUsername
-    def password = isWindows ? aliyunPackagesPassword : ossrhPassword
+    def publishUsername = isWindows ? aliyunPackagesUsername : ossrhUsername
+    def publishPassword = isWindows ? aliyunPackagesPassword : ossrhPassword
 
     maven {
 
       url = isSnapshot ? snapshotsRepoUrl : releasesRepoUrl
       credentials {
-        username username
-        password password
+        username publishUsername
+        password publishPassword
       }
     }
   }
