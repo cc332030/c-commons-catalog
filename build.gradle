@@ -6,7 +6,6 @@ plugins {
 }
 
 catalog {
-  // declare the aliases, bundles and versions in this block
   versionCatalog {
 
     version('charset', 'utf-8')
@@ -25,13 +24,33 @@ catalog {
     version('pagehelper-starter', '1.3.1')
     alias('pagehelper-starter').to('org.mybatis.spring.boot', 'mybatis-spring-boot-starter').versionRef('pagehelper-starter')
 
-    version('lang', '4.4')
-    alias('collections').to('org.apache.commons', 'commons-collections4').versionRef('collections')
-    version('collections', '4.4')
-    alias('collections').to('org.apache.commons', 'commons-collections4').versionRef('collections')
+    version('commons-lang', '3.12.0')
+    alias('commons-lang').to('org.apache.commons', 'commons-lang3').versionRef('commons-lang')
+    version('commons-collections', '4.4')
+    alias('commons-collections').to('org.apache.commons', 'commons-collections4').versionRef('commons-collections')
+    version('commons-io', '2.11.0')
+    alias('commons-io').to('commons-io', 'commons-io').versionRef('commons-io')
+    version('commons-net', '3.8.0')
+    alias('commons-net').to('commons-net', 'commons-net').versionRef('commons-net')
+    bundle('commons', [
+      'commons-lang'
+      , 'commons-collections'
+      , 'commons-io'
+      , 'commons-net'
+    ])
 
+    version('gson', '2.8.8')
+    alias('gson').to('com.google.code.gson', 'gson').versionRef('gson')
     version('guava', '30.1.1-jre')
     alias('guava').to('com.google.guava', 'guava').versionRef('guava')
+
+    version('logback', '1.2.6')
+    alias('logback-core').to('ch.qos.logback', 'logback-core').versionRef('logback')
+    alias('logback-classic').to('ch.qos.logback', 'logback-classic').versionRef('logback')
+    bundle('logback', [
+      'logback-core'
+      , 'logback-classic'
+    ])
 
     version('lombok', '1.18.20')
     alias('lombok').to('org.projectlombok', 'lombok').versionRef('lombok')
