@@ -11,10 +11,10 @@ catalog {
     version('charset', 'utf-8')
     version('jdk', '11')
 
-    version('c-commons-java', '0.0.2-SNAPSHOT')
-    version('c-commons-web', '0.0.2-SNAPSHOT')
-    version('c-commons-mybatis', '0.0.2-SNAPSHOT')
-    version('c-commons-spring', '0.0.2-SNAPSHOT')
+    version('c-commons-java', '1.0')
+    version('c-commons-web', '1.0')
+    version('c-commons-mybatis', '1.0')
+    version('c-commons-spring', '1.0')
 
     version('spring-boot', '2.5.4')
 
