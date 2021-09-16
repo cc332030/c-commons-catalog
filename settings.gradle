@@ -1,6 +1,5 @@
 
 rootProject.name = "c-commons-catalog"
-rootProject.description = "Java commons library"
 
 import org.apache.tools.ant.taskdefs.condition.Os
 
