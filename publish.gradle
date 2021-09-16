@@ -44,3 +44,8 @@ if (!isWindows && !isSnapshot) {
     sign publishing.publications
   }
 }
+
+nexusStaging {
+  username ossrhUsername
+  password ossrhPassword
+}
