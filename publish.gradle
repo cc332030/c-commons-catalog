@@ -19,7 +19,7 @@ publishing {
 
       pom {
 
-        name = ${rootProject.name}
+        name = rootProject.name
         description = 'Java commons library'
         url = "https://github.com/cc332030/${rootProject.name}"
         licenses {
