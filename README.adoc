@@ -1,0 +1,4 @@
+
+= c-commons-catalog
+
+c-commons lib version
