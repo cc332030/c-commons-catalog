@@ -3,8 +3,8 @@ plugins {
   id 'version-catalog'
   id 'maven-publish'
   id 'signing'
-  id 'net.researchgate.release' version '2.8.1'
-  id 'io.codearte.nexus-staging' version '0.30.0'
+  id 'net.researchgate.release' version "${releaseVersion}"
+  id 'io.codearte.nexus-staging' version "${nexusStagingVersion}"
 }
 
 catalog {
@@ -77,8 +77,8 @@ catalog {
 
     alias('jupiter').to('org.junit.jupiter', 'junit-jupiter-api').version('5.8.0')
 
-    alias("release").toPluginId("net.researchgate.release").version('2.8.1')
-    alias("nexus-staging").toPluginId("io.codearte.nexus-staging").version('0.30.0')
+    alias("release").toPluginId("net.researchgate.release").version(releaseVersion)
+    alias("nexus-staging").toPluginId("io.codearte.nexus-staging").version(nexusStagingVersion)
 
   }
 }
