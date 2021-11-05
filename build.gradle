@@ -11,6 +11,9 @@ catalog {
   versionCatalog {
 
     version('charset', 'utf-8')
+
+    version('kotlin', '1.5.31')
+
     version('jdk', '11')
 
     version('c-commons-java', '1.0.1-SNAPSHOT')
