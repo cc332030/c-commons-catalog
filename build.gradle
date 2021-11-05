@@ -13,6 +13,8 @@ catalog {
     version('charset', 'utf-8')
 
     version('kotlin', '1.5.31')
+    alias("kotlin-jvm").toPluginId("org.jetbrains.kotlin.jvm").versionRef('kotlin')
+    alias("kotlin-plugin-spring").toPluginId("org.jetbrains.kotlin.plugin.spring").versionRef('kotlin')
 
     version('jdk', '11')
 
