@@ -10,6 +10,9 @@ plugins {
 catalog {
   versionCatalog {
 
+    alias("release").toPluginId("net.researchgate.release").version(releaseVersion)
+    alias("nexus-staging").toPluginId("io.codearte.nexus-staging").version(nexusStagingVersion)
+
     version('charset', 'utf-8')
 
     version('kotlin', '1.5.31')
@@ -76,9 +79,6 @@ catalog {
     alias('lombok').to('org.projectlombok', 'lombok').version('1.18.20')
 
     alias('jupiter').to('org.junit.jupiter', 'junit-jupiter-api').version('5.8.0')
-
-    alias("release").toPluginId("net.researchgate.release").version(releaseVersion)
-    alias("nexus-staging").toPluginId("io.codearte.nexus-staging").version(nexusStagingVersion)
 
   }
 }
