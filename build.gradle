@@ -26,10 +26,10 @@ catalog {
     version('c-commons-spring', '1.0.1-SNAPSHOT')
 
     version('spring-boot', '2.5.4')
-    alias("org.springframework.boot").toPluginId("org.springframework.boot").versionRef('spring-boot')
+    alias("spring.boot").toPluginId("org.springframework.boot").versionRef('spring-boot')
 
     version('spring-dependency', '1.0.11.RELEASE')
-    alias("io.spring.dependency-management").toPluginId("io.spring.dependency-management").versionRef('spring-dependency')
+    alias("spring.dependency").toPluginId("io.spring.dependency-management").versionRef('spring-dependency')
 
     version('commons-lang', '3.12.0')
     alias('commons-lang').to('org.apache.commons', 'commons-lang3').versionRef('commons-lang')
@@ -76,6 +76,9 @@ catalog {
     alias('lombok').to('org.projectlombok', 'lombok').version('1.18.20')
 
     alias('jupiter').to('org.junit.jupiter', 'junit-jupiter-api').version('5.8.0')
+
+    alias("release").toPluginId("net.researchgate.release").version('2.8.1')
+    alias("nexus-staging").toPluginId("io.codearte.nexus-staging").version('0.30.0')
 
   }
 }
