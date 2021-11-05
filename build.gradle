@@ -26,6 +26,10 @@ catalog {
     version('c-commons-spring', '1.0.1-SNAPSHOT')
 
     version('spring-boot', '2.5.4')
+    alias("org.springframework.boot").toPluginId("org.springframework.boot").versionRef('spring-boot')
+
+    version('spring-dependency', '1.0.11.RELEASE')
+    alias("io.spring.dependency-management").toPluginId("io.spring.dependency-management").versionRef('spring-dependency')
 
     version('commons-lang', '3.12.0')
     alias('commons-lang').to('org.apache.commons', 'commons-lang3').versionRef('commons-lang')
