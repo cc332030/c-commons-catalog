@@ -83,9 +83,9 @@ catalog {
   }
 }
 
-//  configurations.all {
-//    resolutionStrategy.cacheDynamicVersionsFor 1, 'seconds'
-//    resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
-//  }
+configurations.all {
+  resolutionStrategy.cacheDynamicVersionsFor 1, 'seconds'
+  resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
+}
 
 apply from: 'publish.gradle'
